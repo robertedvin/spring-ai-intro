@@ -9,13 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class OpenAIServiceImplTest {
 
-	@Autowired
-	OpenAIService openAIService;
+    @Autowired
+    OpenAIService openAIService;
 
-	@Test
-	void getAnswer() {
+    @Test
+    void getAnswer() {
 
-		String answer = openAIService.getAnswer("Write a python script to output numbers from 1 to 100");
-		System.out.println(answer);
-	}
+        String answer = openAIService.getAnswer("Create JSON for the following: There are 3 people, two males. " +
+                "One is named Mark. Another is named Joe. And a third person is a woman named Sam. The woman is age 20 " +
+                "and the two men are both 19.");
+        System.out.println("Got the answer");
+        System.out.println(answer);
+    }
 }
